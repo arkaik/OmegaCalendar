@@ -6,10 +6,9 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:id="@+id/task_text"
         android:hint="Nombre de la Tarea"
-        android:digits="0123456789qwertyuiopasdfghjklñzxcvbnmç_,.-àáèéìíòóùúQWERTYUIOPASDFGHJKLÑZXCVBNMÇÀÈÌÒÙÁÉÍÓÚß#$@"
         android:layout_margin="4dp" />
 
     <Spinner

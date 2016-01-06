@@ -72,13 +72,11 @@ public class EventEditFragment extends DialogFragment {
         a = (MainActivity) getActivity();
 
 
-        evname = (EditText) a.findViewById(R.id.evname_field);
+        evname = (EditText) a.findViewById(R.id.name_field);
         evdate1 = (EditText) a.findViewById(R.id.date1_field);
         evtime1 = (EditText) a.findViewById(R.id.time1_field);
         evdate2 = (EditText) a.findViewById(R.id.date2_field);
         evtime2 = (EditText) a.findViewById(R.id.time2_field);
-
-        evname.setTextLocale(new Locale("es","ES"));
 
         final String s = arg.getString("event");
         sarg = s != null ? s.split("[|]") : new String[0];

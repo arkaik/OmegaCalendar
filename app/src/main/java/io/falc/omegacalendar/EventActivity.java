@@ -9,7 +9,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -39,7 +38,7 @@ public class EventActivity extends AppCompatActivity {
         final Intent intent = getIntent();
 
         cc = new CalendarController(EventActivity.this);
-        evname = (EditText) findViewById(R.id.evname_field);
+        evname = (EditText) findViewById(R.id.name_field);
         time1 = (EditText) findViewById(R.id.time1_field);
         date1 = (EditText) findViewById(R.id.date1_field);
         time2 = (EditText) findViewById(R.id.time2_field);
@@ -145,7 +144,26 @@ public class EventActivity extends AppCompatActivity {
             }
         });
 
+        ListView lw = (ListView) findViewById(R.id.tasklistView);
+        Cursor cursor = cc.getTasksOfAnEvent(Long.parseLong(intent.getStringExtra("calID")));
+        SimpleCursorAdapter adapter = new SimpleCursorAdapter(EventActivity.this,R.layout.task_item,cursor,
+                new String[] {EventTasksContract.Tasks.TASK_NAME, EventTasksContract.Tasks.TASK_DONE},
+                new int[] {R.id.task_item_text, R.id.taskcheckBox},0);
 
+        adapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {
+            @Override
+            public boolean setViewValue(View view, Cursor cursor, int columnIndex) {
+
+                if (columnIndex == 2)
+                {
+                    int bdone = cursor.getInt(columnIndex);
+                    CheckBox cb = (CheckBox) view;
+                    
+                }
+
+                return false;
+            }
+        });
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

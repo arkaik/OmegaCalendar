@@ -40,7 +40,6 @@ public class Fragment1 extends Fragment {
 
         final float scale = getContext().getResources().getDisplayMetrics().density;
 
-        /*
         int curDay = gc.get(Calendar.DAY_OF_WEEK)-1;
         int curMonth = gc.get(Calendar.MONTH);
         int curHour = gc.get(Calendar.HOUR_OF_DAY);
@@ -100,21 +99,23 @@ public class Fragment1 extends Fragment {
                     Log.i("Instances", h2+":"+m2+" ("+v2+")");
 
                     int delta = v2-v1;
-                    Log.i("Instances_Delta", Integer.toString(delta));
+                    //Log.i("Instances_Delta", Integer.toString(delta));
 
                     int pixels1 = (int) (delta * scale + 0.5f);
                     int pixels2 = (int) (v1 * scale + 0.5f);
 
-                    RelativeLayout rl1 = (RelativeLayout) getActivity().findViewById(day[day_week]);
+                    /*RelativeLayout rl1 = (RelativeLayout) getActivity().findViewById(day[day_week]);
                     View v = new View(getContext());
                     v.setBackgroundColor(0xffff0000);
                     RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, pixels1);
                     lp.setMargins(0, pixels2, 0, 0);
-                    rl1.addView(v, lp);
+                    rl1.addView(v, lp);*/
                 }
             }
-        }*/
+        }
 
 
     }
+
+
 }

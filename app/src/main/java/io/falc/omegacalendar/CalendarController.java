@@ -95,10 +95,6 @@ public class CalendarController implements CalendarNameFragment.CalendarNameList
 
         Uri result = activity.getContentResolver().insert(builder.build(), cv);
 
-        activity.getSupportFragmentManager().beginTransaction()
-                .replace(R.id.content_frame, new Fragment2())
-                .commit();
-
     }
 
     public void editCalendar(long id, String name) {

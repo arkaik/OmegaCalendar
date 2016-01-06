@@ -26,14 +26,12 @@ public class MainActivity extends AppCompatActivity
     private DrawerLayout drawerLayout;
     private NavigationView navView;
 
-    private CalendarController cc;;
+    private CalendarController cc = new CalendarController(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        cc = new CalendarController(this);
 
         appbar = (Toolbar)findViewById(R.id.appbar);
         setSupportActionBar(appbar);

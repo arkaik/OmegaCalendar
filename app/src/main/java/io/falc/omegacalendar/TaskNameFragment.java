@@ -43,7 +43,7 @@ public class TaskNameFragment extends DialogFragment {
             names[i] = arg[1];
         }
 
-        ArrayAdapter<String> adap = new ArrayAdapter<String>(a, android.R.layout.simple_spinner_item, android.R.id.text1, names);
+        ArrayAdapter<String> adap = new ArrayAdapter<String>(a, R.layout.task_item,R.id.task_item_text, names);
 
         sp.setAdapter(adap);
 

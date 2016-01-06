@@ -19,7 +19,7 @@ public class EventTasksContract {
         public static final String TASK_NAME = "taskname";
         public static final String TASK_DONE = "taskdone";
 
-        public static final String CONTENT_URI = "io.falc.omegacalendar.android.contentproviders/tasks";
+        public static final String CONTENT_URI = "io.falc.omegacalendar";
     }
 
 }
