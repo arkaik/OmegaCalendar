@@ -17,7 +17,7 @@ import java.util.GregorianCalendar;
 public class Fragment1 extends Fragment {
 
     private int[] day = {R.id.sundayRelativeLayout, R.id.mondayRelativeLayout, R.id.tuesdayRelativeLayout, R.id.wednesdayRelativeLayout,
-    R.id.thursdayDateTextView, R.id.fridayRelativeLayout, R.id.saturdayRelativeLayout};
+    R.id.thursdayRelativeLayout, R.id.fridayRelativeLayout, R.id.saturdayRelativeLayout};
     private int[] dayHeader = {R.id.sundayHeaderRelativeLayout, R.id.mondayHeaderRelativeLayout, R.id.tuesdayHeaderRelativeLayout, R.id.wednesdayHeaderRelativeLayout,
     R.id.thursdayHeaderRelativeLayout, R.id.fridayHeaderRelativeLayout, R.id.saturdayHeaderRelativeLayout};
 
@@ -104,12 +104,13 @@ public class Fragment1 extends Fragment {
                     int pixels1 = (int) (delta * scale + 0.5f);
                     int pixels2 = (int) (v1 * scale + 0.5f);
 
-                    //RelativeLayout rl1 = (RelativeLayout) getActivity().findViewById(day[day_week]);
+                    RelativeLayout rl1 = (RelativeLayout) getActivity().findViewById(day[day_week]);
+                    Log.i("Instances_Delta", delta+" "+Integer.toHexString(day[day_week]));
                     View v = new View(getContext());
                     v.setBackgroundColor(0xffff0000);
                     RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, pixels1);
                     lp.setMargins(0, pixels2, 0, 0);
-                    //rl1.addView(v, lp);
+                    rl1.addView(v, lp);
                 }
             }
         }
