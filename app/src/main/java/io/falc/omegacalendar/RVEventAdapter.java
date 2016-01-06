@@ -1,6 +1,7 @@
 package io.falc.omegacalendar;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
@@ -56,17 +57,17 @@ public class RVEventAdapter extends RecyclerView.Adapter<RVEventAdapter.ViewHold
         @Override
         public boolean onMenuItemClick(MenuItem item) {
             DialogFragment dialog;
-            Bundle args = new Bundle();
-            args.putString("event", arguments);
 
             switch(item.getItemId())
             {
                 case R.id.action_editcal:
-                    dialog = new EventEditFragment();
-                    dialog.setArguments(args);
-                    dialog.show(activity.getSupportFragmentManager(),"EventEditFragment");
+                    Intent intent = new Intent(activity,EventEditActivity.class);
+                    intent.putExtra("event", arguments);
+                    activity.startActivity(intent);
                     return true;
                 case R.id.action_delcal:
+                    Bundle args = new Bundle();
+                    args.putString("event", arguments);
                     dialog = new EventDeleteFragment();
                     dialog.setArguments(args);
                     dialog.show(activity.getSupportFragmentManager(),"EventDeleteFragment");

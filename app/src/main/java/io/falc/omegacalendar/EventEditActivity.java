@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -13,14 +14,13 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.TimePicker;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class EventActivity extends AppCompatActivity {
+public class EventEditActivity extends AppCompatActivity {
 
     CalendarController cc;
     EditText evname;
@@ -31,18 +31,18 @@ public class EventActivity extends AppCompatActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_event);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setContentView(R.layout.activity_event_edit);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar);
 
         final Intent intent = getIntent();
 
-        cc = new CalendarController(EventActivity.this);
-        evname = (EditText) findViewById(R.id.name_field);
-        time1 = (EditText) findViewById(R.id.time1_field);
-        date1 = (EditText) findViewById(R.id.date1_field);
-        time2 = (EditText) findViewById(R.id.time2_field);
-        date2 = (EditText) findViewById(R.id.date2_field);
+        cc = new CalendarController(EventEditActivity.this);
+        evname = (EditText) findViewById(R.id.editname_field);
+        time1 = (EditText) findViewById(R.id.edittime1_field);
+        date1 = (EditText) findViewById(R.id.editdate1_field);
+        time2 = (EditText) findViewById(R.id.edittime2_field);
+        date2 = (EditText) findViewById(R.id.editdate2_field);
 
         myCalendar = Calendar.getInstance();
 
@@ -94,7 +94,7 @@ public class EventActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                new DatePickerDialog(EventActivity.this, date, myCalendar
+                new DatePickerDialog(EventEditActivity.this, date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
@@ -103,7 +103,7 @@ public class EventActivity extends AppCompatActivity {
         time1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new TimePickerDialog(EventActivity.this,time,
+                new TimePickerDialog(EventEditActivity.this,time,
                         myCalendar.get(Calendar.HOUR_OF_DAY),
                         myCalendar.get(Calendar.MINUTE), true).show();
             }
@@ -112,7 +112,7 @@ public class EventActivity extends AppCompatActivity {
         date2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(EventActivity.this, datel2, myCalendar
+                new DatePickerDialog(EventEditActivity.this, datel2, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
@@ -121,17 +121,40 @@ public class EventActivity extends AppCompatActivity {
         time2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new TimePickerDialog(EventActivity.this, timel2,
+                new TimePickerDialog(EventEditActivity.this, timel2,
                         myCalendar.get(Calendar.HOUR_OF_DAY),
                         myCalendar.get(Calendar.MINUTE), true).show();
             }
         });
 
+        ListView lw = (ListView) findViewById(R.id.edittasklistView);
+        String arg = intent.getStringExtra("event");
+        String[] s = arg.split("[|]");
 
+        Cursor cursor = cc.getTasksOfAnEvent(Long.parseLong(s[0]));
+        SimpleCursorAdapter adapter = new SimpleCursorAdapter(EventEditActivity.this,R.layout.task_item,cursor,
+        new String[] {EventTasksContract.Tasks.TASK_NAME, EventTasksContract.Tasks.TASK_DONE},
+        new int[] {R.id.task_item_text, R.id.taskcheckBox},0);
 
+        adapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {
+            @Override
+            public boolean setViewValue(View view, Cursor cursor, int columnIndex) {
 
+                if (columnIndex == 2)
+                {
+                    int bdone = cursor.getInt(columnIndex);
+                    boolean b = bdone != 0;
+                    CheckBox cb = (CheckBox) view;
+                    cb.setChecked(b);
+                }
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+                return false;
+            }
+        });
+
+        lw.setAdapter(adapter);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab2);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -184,7 +207,7 @@ public class EventActivity extends AppCompatActivity {
         time2.setText(sdf.format(myCalendar.getTime()));
     }
 
-    private void setData()
+    public void setData()
     {
 
     }
