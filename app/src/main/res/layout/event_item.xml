@@ -1,0 +1,52 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="48dp"
+    android:layout_width="wrap_content" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/calView"
+        android:layout_alignParentStart="true"
+        android:layout_margin="4dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:hint="Calendario"
+        android:textSize="12dp"
+        android:textIsSelectable="false"
+        android:textColor="#bdbdbd"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id = "@+id/evItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Nombre del Evento"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:textColor="#848383"
+        android:layout_toStartOf="@+id/evButton"
+        android:layout_toEndOf="@+id/calView" />
+
+    <ImageButton
+        android:id="@+id/evButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_calendar_clock_black_24dp"
+        android:contentDescription="Event Button"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="4dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

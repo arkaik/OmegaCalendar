@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="0dp" >
+
+    <LinearLayout
+        android:id="@+id/ddayLabelsLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:baselineAligned="false">
+
+        <RelativeLayout
+            android:id="@+id/dcurrentMonthRelativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/dcurrentMonthTextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:text=""
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:textColor="@color/color_accent" />
+
+            <TextView
+                android:id="@+id/dcurrentYearTextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:text=""
+                android:textSize="13dp"
+                android:textStyle="bold"
+                android:textColor="@color/color_accent" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/dsundayHeaderRelativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="2" >
+
+            <TextView
+                android:id="@+id/dsundayDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="6dp"
+                android:text=""
+                android:textColor="@color/color_accent"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dsundayTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="6dp"
+                android:text="D"
+                android:textColor="@color/color_accent"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/dmondayHeaderRelativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="2" >
+
+            <TextView
+                android:id="@+id/dmondayDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="6dp"
+                android:text=""
+                android:textColor="@color/color_accent"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dmondayTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="6dp"
+                android:gravity="center"
+                android:text="L"
+                android:textColor="@color/color_accent"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/dtuesdayHeaderRelativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="2" >
+
+            <TextView
+                android:id="@+id/dtuesdayDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="6dp"
+                android:text=""
+                android:textColor="@color/color_accent"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dtuesdayTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="6dp"
+                android:text="M"
+                android:textColor="@color/color_accent"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/dwednesdayHeaderRelativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="2" >
+
+            <TextView
+                android:id="@+id/dwednesdayDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="6dp"
+                android:text=""
+                android:textColor="@color/color_accent"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dwednesdayTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="6dp"
+                android:text="X"
+                android:textColor="@color/color_accent"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/dthursdayHeaderRelativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="2" >
+
+            <TextView
+                android:id="@+id/dthursdayDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="6dp"
+                android:text=""
+                android:textColor="@color/color_accent"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dthursdayTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="6dp"
+                android:text="J"
+                android:textColor="@color/color_accent"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/dfridayHeaderRelativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="2" >
+
+            <TextView
+                android:id="@+id/dfridayDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="6dp"
+                android:layout_marginLeft="6dp"
+                android:text=""
+                android:textColor="@color/color_accent"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dfridayTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="6dp"
+                android:text="V"
+                android:textColor="@color/color_accent"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/dsaturdayHeaderRelativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="2" >
+
+            <TextView
+                android:id="@+id/dsaturdayDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="6dp"
+                android:text=""
+                android:textColor="@color/color_accent"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dsaturdayTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="6dp"
+                android:text="S"
+                android:textColor="@color/color_accent"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/ddividerView"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/ddayLabelsLinearLayout"
+        android:background="@color/color_accent" />
+
+    <ScrollView
+        android:id="@+id/dcalendarScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ddividerView"
+        android:layout_alignParentBottom="true"
+        android:overScrollMode="never"
+        android:padding="0dp"
+        android:scrollbars="none"
+        android:fadingEdge="none" >
+
+        <RelativeLayout
+            android:id="@+id/dcalendarRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="0dp" >
+
+            <LinearLayout
+                android:id="@+id/dcalendarSplitterRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="1440dp"
+                android:baselineAligned="false"
+                android:padding="0dp" >
+
+                <RelativeLayout
+                    android:id="@+id/dhoursRelativeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="0dp" >
+
+                    <include layout="@layout/calendar_zebra" />
+
+                    <TextView
+                        android:id="@+id/dtime12amTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime1amTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="60dp"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime2amTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="120dp"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime3amTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="180dp"
+                        android:gravity="center"
+                        android:text="3"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime4amTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="240dp"
+                        android:gravity="center"
+                        android:text="4"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime5amTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="300dp"
+                        android:gravity="center"
+                        android:text="5"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime6amTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="360dp"
+                        android:gravity="center"
+                        android:text="6"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime7amTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="420dp"
+                        android:gravity="center"
+                        android:text="7"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime8amTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="480dp"
+                        android:gravity="center"
+                        android:text="8"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime9amTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="540dp"
+                        android:gravity="center"
+                        android:text="9"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime10amTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="600dp"
+                        android:gravity="center"
+                        android:text="10"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime11amTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="660dp"
+                        android:gravity="center"
+                        android:text="11"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime12pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="720dp"
+                        android:gravity="center"
+                        android:text="12"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime1pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="780dp"
+                        android:gravity="center"
+                        android:text="13"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime2pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="840dp"
+                        android:gravity="center"
+                        android:text="14"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime3pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="900dp"
+                        android:gravity="center"
+                        android:text="15"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime4pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="960dp"
+                        android:gravity="center"
+                        android:text="16"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime5pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="1020dp"
+                        android:gravity="center"
+                        android:text="17"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime6pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="1080dp"
+                        android:gravity="center"
+                        android:text="18"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime7pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="1140dp"
+                        android:gravity="center"
+                        android:text="19"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime8pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="1200dp"
+                        android:gravity="center"
+                        android:text="20"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime9pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="1260dp"
+                        android:gravity="center"
+                        android:text="21"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime10pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="1320dp"
+                        android:gravity="center"
+                        android:text="22"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/dtime11pmTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="1380dp"
+                        android:gravity="center|top"
+                        android:text="23"
+                        android:textSize="15dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/dsundayRelativeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2" >
+
+                    <include layout="@layout/calendar_zebra" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/dmondayRelativeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2" >
+
+                    <include layout="@layout/calendar_zebra" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/dtuesdayRelativeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2" >
+
+                    <include layout="@layout/calendar_zebra" />
+
+                    <View
+                        android:id="@+id/drefreshView"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:visibility="invisible"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="866dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/dwednesdayRelativeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2" >
+
+                    <include layout="@layout/calendar_zebra" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/dthursdayRelativeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2" >
+
+                    <include layout="@layout/calendar_zebra" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/dfridayRelativeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2" >
+
+                    <include layout="@layout/calendar_zebra" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/dsaturdayRelativeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2" >
+
+                    <include layout="@layout/calendar_zebra" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dcurrentTimeMarkerLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="100dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:padding="0dp" >
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="3dp"
+                    android:layout_weight="1" />
+
+                <View
+                    android:id="@+id/dcurrentTimeLineView"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="14"
+                    android:background="@color/color_primary_dark" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/drefreshLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="5dp"
+        android:background="@color/black"
+        android:visibility="invisible">
+
+        <ProgressBar
+            android:id="@+id/drefreshProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleLarge" />
+
+        <TextView
+            android:id="@+id/dupdatingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="24dp"
+            android:layout_marginRight="5dp"
+            android:text="Actualizando..." />
+
+    </LinearLayout>
+
+</RelativeLayout>

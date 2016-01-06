@@ -1,0 +1,21 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/task_text"
+        android:hint="Nombre de la Tarea"
+        android:digits="0123456789qwertyuiopasdfghjklñzxcvbnmç_,.-àáèéìíòóùúQWERTYUIOPASDFGHJKLÑZXCVBNMÇÀÈÌÒÙÁÉÍÓÚß#$@"
+        android:layout_margin="4dp" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/task_spinner"
+        android:layout_margin="4dp" />
+
+</LinearLayout>

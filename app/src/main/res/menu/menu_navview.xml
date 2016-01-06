@@ -1,0 +1,34 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/menu_seccion_1"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Principal"/>
+        <item
+            android:id="@+id/menu_seccion_2"
+            android:icon="@drawable/ic_calendar_multiple_black_24dp"
+            android:title="Calendarios"/>
+        <item
+            android:id="@+id/menu_seccion_3"
+            android:icon="@drawable/ic_calendar_clock_black_24dp"
+            android:title="Eventos"/>
+        <item
+            android:id="@+id/menu_seccion_4"
+            android:icon="@drawable/ic_assignment_late_black_24dp"
+            android:title="Tareas"/>
+    </group>
+    <group>
+        <item
+            android:id="@+id/menu_opcion_1"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="Preferencias"/>
+        <item
+            android:id="@+id/menu_opcion_2"
+            android:icon="@drawable/ic_help_outline_black_24dp"
+            android:title="Ayuda"/>
+        <item
+            android:id="@+id/menu_opcion_3"
+            android:icon="@drawable/ic_info_outline_black_24dp"
+            android:title="Acerca de"/>
+    </group>
+</menu>

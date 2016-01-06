@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="io.falc.omegacalendar.MainActivity" >
+    <item android:id="@+id/action_cal"
+        android:title="Calendario"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_event"
+        android:title="Evento"
+        android:orderInCategory="200"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_task"
+        android:title="Tarea"
+        android:orderInCategory="300"
+        app:showAsAction="never" />
+</menu>

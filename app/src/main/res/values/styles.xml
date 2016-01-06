@@ -1,0 +1,20 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+        <!-- <style name="Widget.Holo.Light.ActionMode" parent="@android:style/Widget.Holo.Light.ActionMode">
+       <item name="titleTextStyle">@android:style/TextAppearance.Holo.Widget.ActionMode.Title</item>
+       <item name="subtitleTextStyle">@android:style/TextAppearance.Holo.Widget.ActionMode.Subtitle</item>-->
+    </style>
+
+    <style name="Widget.Holo.Light.CalendarView" parent="@android:style/Widget.Holo.Light.CalendarView" />
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <!-- Customize your theme here. -->
+
+</resources>
