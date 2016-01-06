@@ -73,12 +73,6 @@
                 android:textSize="15dp"
                 android:textStyle="bold" />
 
-            <View
-                android:id="@+id/dayMarkerView"
-                android:layout_width="fill_parent"
-                android:layout_height="2dp"
-                android:layout_alignParentBottom="true"
-                android:background="@color/color_accent" />
         </RelativeLayout>
 
         <RelativeLayout
