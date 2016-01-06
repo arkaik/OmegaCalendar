@@ -127,6 +127,8 @@ public class EventEditActivity extends AppCompatActivity {
             }
         });
 
+
+
         ListView lw = (ListView) findViewById(R.id.edittasklistView);
         String arg = intent.getStringExtra("event");
         String[] s = arg.split("[|]");

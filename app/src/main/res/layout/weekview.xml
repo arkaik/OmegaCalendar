@@ -6,7 +6,7 @@
     android:padding="0dp" >
 
     <LinearLayout
-        android:id="@+id/dayLabelsLinearLayout"
+        android:id="@+id/LabelsLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -269,7 +269,7 @@
         android:id="@+id/dividerView"
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:layout_below="@+id/dayLabelsLinearLayout"
+        android:layout_below="@+id/LabelsLinearLayout"
         android:background="@color/color_accent" />
 
     <ScrollView
