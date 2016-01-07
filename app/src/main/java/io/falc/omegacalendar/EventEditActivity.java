@@ -135,25 +135,10 @@ public class EventEditActivity extends AppCompatActivity {
         ListView lw = (ListView) findViewById(R.id.edittasklistView);
 
         final Cursor cursor = cc.getTasksOfAnEvent(Long.parseLong(s[0]));
-        final SimpleCursorAdapter adapter = new SimpleCursorAdapter(EventEditActivity.this,R.layout.task_item,cursor,
+        final TaskListCursorAdapter adapter = new TaskListCursorAdapter(EventEditActivity.this,R.layout.task_item,cursor,
         new String[] {EventTasksContract.Tasks.TASK_NAME, EventTasksContract.Tasks.TASK_DONE},
         new int[] {R.id.task_item_text, R.id.taskcheckBox},0);
 
-        adapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {
-            @Override
-            public boolean setViewValue(View view, Cursor cursor, int columnIndex) {
-
-                if (columnIndex == 2)
-                {
-                    int bdone = cursor.getInt(columnIndex);
-                    boolean b = bdone != 0;
-                    CheckBox cb = (CheckBox) view;
-                    cb.setChecked(b);
-                }
-
-                return false;
-            }
-        });
 
         lw.setAdapter(adapter);
 
@@ -169,7 +154,7 @@ public class EventEditActivity extends AppCompatActivity {
                 tnf.show(getSupportFragmentManager(), "TaskNewFragment");
 
                 Cursor nc = cc.getTasksOfAnEvent(Long.parseLong(s[0]));
-                adapter.changeCursor(nc);
+                adapter.swapCursor(nc);
 
             }
         });
