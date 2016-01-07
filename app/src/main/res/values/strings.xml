@@ -10,5 +10,6 @@
     <string name="cancel">Cancelar</string>
     <string name="title_activity_event">EventActivity</string>
     <string name="title_activity_edit_event">Editar evento</string>
+    <string name="TaskNewNameHint">Nombre de la tarea</string>
 
 </resources>

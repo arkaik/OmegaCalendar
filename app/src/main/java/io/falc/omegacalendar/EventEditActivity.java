@@ -10,6 +10,7 @@ import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -27,6 +28,7 @@ public class EventEditActivity extends AppCompatActivity {
     EditText time1, time2;
     EditText date1, date2;
     Calendar myCalendar;
+    Button button;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -127,11 +129,23 @@ public class EventEditActivity extends AppCompatActivity {
             }
         });
 
+        String arg = intent.getStringExtra("event");
+        final String[] s = arg.split("[|]");
 
+        button = (Button) findViewById(R.id.edittaskevbutton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle b = new Bundle();
+                b.putLong("evID",Long.parseLong(s[0]));
+
+                TaskNewFragment tnf = new TaskNewFragment();
+                tnf.setArguments(b);
+                tnf.show(getSupportFragmentManager(),"TaskNewFragment");
+            }
+        });
 
         ListView lw = (ListView) findViewById(R.id.edittasklistView);
-        String arg = intent.getStringExtra("event");
-        String[] s = arg.split("[|]");
 
         Cursor cursor = cc.getTasksOfAnEvent(Long.parseLong(s[0]));
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(EventEditActivity.this,R.layout.task_item,cursor,
@@ -160,7 +174,7 @@ public class EventEditActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Long id = Long.parseLong(intent.getStringExtra("calID"));
+                Long id = Long.parseLong(s[0]);
                 cc.addEvent(id, evname.getText().toString(), date1.getText().toString(), time1.getText().toString(),
                         date2.getText().toString(), time2.getText().toString());
 
@@ -212,5 +226,10 @@ public class EventEditActivity extends AppCompatActivity {
     public void setData()
     {
 
+    }
+
+    public CalendarController getCalendarController()
+    {
+        return cc;
     }
 }
