@@ -132,23 +132,10 @@ public class EventEditActivity extends AppCompatActivity {
         String arg = intent.getStringExtra("event");
         final String[] s = arg.split("[|]");
 
-        button = (Button) findViewById(R.id.edittaskevbutton);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Bundle b = new Bundle();
-                b.putLong("evID",Long.parseLong(s[0]));
-
-                TaskNewFragment tnf = new TaskNewFragment();
-                tnf.setArguments(b);
-                tnf.show(getSupportFragmentManager(),"TaskNewFragment");
-            }
-        });
-
         ListView lw = (ListView) findViewById(R.id.edittasklistView);
 
-        Cursor cursor = cc.getTasksOfAnEvent(Long.parseLong(s[0]));
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(EventEditActivity.this,R.layout.task_item,cursor,
+        final Cursor cursor = cc.getTasksOfAnEvent(Long.parseLong(s[0]));
+        final SimpleCursorAdapter adapter = new SimpleCursorAdapter(EventEditActivity.this,R.layout.task_item,cursor,
         new String[] {EventTasksContract.Tasks.TASK_NAME, EventTasksContract.Tasks.TASK_DONE},
         new int[] {R.id.task_item_text, R.id.taskcheckBox},0);
 
@@ -169,6 +156,23 @@ public class EventEditActivity extends AppCompatActivity {
         });
 
         lw.setAdapter(adapter);
+
+        button = (Button) findViewById(R.id.edittaskevbutton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle b = new Bundle();
+                b.putLong("evID", Long.parseLong(s[0]));
+
+                TaskNewFragment tnf = new TaskNewFragment();
+                tnf.setArguments(b);
+                tnf.show(getSupportFragmentManager(), "TaskNewFragment");
+
+                Cursor nc = cc.getTasksOfAnEvent(Long.parseLong(s[0]));
+                adapter.changeCursor(nc);
+
+            }
+        });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab2);
         fab.setOnClickListener(new View.OnClickListener() {

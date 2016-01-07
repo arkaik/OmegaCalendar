@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity
                                     .replace(R.id.content_frame, fragment)
                                     .commit();
 
-                            menuItem.setChecked(true);
+                            //menuItem.setChecked(true);
                             getSupportActionBar().setTitle(menuItem.getTitle());
                         }
 

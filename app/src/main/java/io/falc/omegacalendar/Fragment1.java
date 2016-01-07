@@ -2,6 +2,8 @@ package io.falc.omegacalendar;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,10 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 
 public class Fragment1 extends Fragment {
 
@@ -44,7 +49,23 @@ public class Fragment1 extends Fragment {
         int curMonth = gc.get(Calendar.MONTH);
         int curHour = gc.get(Calendar.HOUR_OF_DAY);
         int curMinute = gc.get(Calendar.MINUTE);
-        Log.i("fragment4", gc.getTime().toString());
+        Log.i("fragment1", gc.getTime().toString());
+
+        TextView cy = (TextView) getActivity().findViewById(R.id.currentYearTextView);
+        SimpleDateFormat sdfy = new SimpleDateFormat("yyyy", Locale.getDefault());
+        String yeah = sdfy.format(gc.getTime());
+        cy.setText(yeah);
+
+        RelativeLayout mhead = (RelativeLayout) getActivity().findViewById(R.id.mondayHeaderRelativeLayout);
+        mhead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                DayViewFragment dvf = new DayViewFragment();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, dvf).commit();
+
+            }
+        });
 
         int vh = curHour*60+curMinute;
         View curdayweek = new View(getContext());

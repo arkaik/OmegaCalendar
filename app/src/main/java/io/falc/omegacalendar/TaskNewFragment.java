@@ -31,12 +31,13 @@ public class TaskNewFragment extends DialogFragment {
         Bundle b = getArguments();
         evID = b.getLong("evID");
 
-        et = (EditText) vi.findViewById(R.id.calName);
+        et = (EditText) vi.findViewById(R.id.newTaskName);
 
         builder.setView(vi)
                 .setPositiveButton(R.string.accept, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+
                         cc.addTask(evID,et.getText().toString());
                     }
                 })
@@ -46,7 +47,7 @@ public class TaskNewFragment extends DialogFragment {
                         dialog.cancel();
                     }
                 })
-                .setTitle("Nuevo calendario");
+                .setTitle("Nueva tarea");
 
         return builder.create();
     }
